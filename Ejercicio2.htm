@@ -42,7 +42,7 @@ function init() {
 
     var t = 2.2;
     for (var i = 0; i < 3; i++) {
-        
+        h = Math.PI/2 
         d = t * 1.05
         arrCube.push(cubo(t, t, t, 0, 0, 0, 'Basic', (i==0 ? 'red': i==1 ? 'green' : 'blue'), false));
         
@@ -55,11 +55,11 @@ function init() {
 
         arrCube[i].geometry.translate((i==0)*d, (i==1)*d, (i==2)*d)
 
-        g = Math.PI/2
-        arrCube[i].rotateZ(0, 0, g)}
-    }
-
-
+        
+        if (i == 0) {
+        arrCube[i].rotateZ(h, 0, 0)}
+    }   
+        
     const axesHelper = new THREE.AxesHelper(10);
     scene.add(axesHelper);
 
